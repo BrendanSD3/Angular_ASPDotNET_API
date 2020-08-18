@@ -9,7 +9,7 @@ import { EntryElement } from '../interfaces/EntryElement';
   styleUrls: ['./entries.component.css']
 })
 export class EntriesComponent implements OnInit {
-  displayedColumns: string[]=['Description', 'IsExpense','Value'];
+  displayedColumns: string[]=['Description', 'IsExpense','Value','Actions'];
   dataSource;
 
   constructor(private service:EntryService ) { }
@@ -21,5 +21,8 @@ this.service.getAll().subscribe((data)=>{
 })
 
   }
-
+updateEntry(entry)
+{
+  console.log(entry);
+}
 }
